@@ -127,7 +127,7 @@ ConfigMap是k8s集群中一个单独的资源，用来存储键值对形式的�
     uid: 8a39edf1-7a6d-4d3e-9cfb-3ffca2880297
   ```
 
-  ![7-1](/Users/sumyf/Documents/code/docker/doc/image/7-1.png)
+  ![7-1](./image/7-1.png)
 
 ​	
 
@@ -135,19 +135,19 @@ ConfigMap是k8s集群中一个单独的资源，用来存储键值对形式的�
 
 - 通过环境变量的方式注入
 
-  ![7-2](/Users/sumyf/Documents/code/docker/doc/image/7-2.png)	![7-3](/Users/sumyf/Documents/code/docker/doc/image/7-3.png)
+  ![7-2](/Users/sumyf/Documents/code/docker/doc/image/7-2.png)	![7-3](./image/7-3.png)
 
 ​			
 
 - 一次性注入configMap
 
-  ![image-20220909173629188](/Users/sumyf/Library/Application Support/typora-user-images/image-20220909173629188.png)
+  ![image-20220909173629188](./image/7-7.png)
 
 ​			通过configMapRef可以批量赋值环境变量，还可以通过perfix设置前缀，例如configMap中的FOO，变换			成CONFIG_FOO。当存在FOO-BAR这种破折号的的变量，则被忽略
 
 
 
--  使用configMap条目 作为 命令参数![7-4](/Users/sumyf/Documents/code/docker/doc/image/7-4.png)
+-  使用configMap条目 作为 命令参数![7-4](./image/7-4.png)
 
 - 通过configMap卷将条目暴露为文件
 
@@ -176,7 +176,7 @@ ConfigMap是k8s集群中一个单独的资源，用来存储键值对形式的�
     kubectl create configmap fortune-config --from-file=configmap-files
     ```
 
-    ![image-20220909220605978](/Users/sumyf/Library/Application Support/typora-user-images/截屏2022-09-09 22.09.56.png)
+    ![image-20220909220605978](F:\project\doc\k8s\image\7-8.png)
 
   - 创建pod引用configMap
 
