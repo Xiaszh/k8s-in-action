@@ -121,7 +121,7 @@ spec:
 **持久卷（PersistentVolume，PV）** 是集群中的一块存储，可以由管理员事先制备， 或者使用[存储类（Storage Class）](https://kubernetes.io/zh-cn/docs/concepts/storage/storage-classes/)来动态制备
 **持久卷申领（PersistentVolumeClaim，PVC）** 表达的是用户对存储的请求。概念上与 Pod 类似。 Pod 会耗用节点资源，而 PVC 申领会耗用 PV 资源。
 
-![截屏2022-09-12 16.15.08](/Users/sumyf/Desktop/截屏2022-09-12 16.15.08.png)
+![截屏2022-09-12 16.15.08](./image/6-1.png)
 
 ##### 创建持久卷
 
@@ -149,7 +149,7 @@ kubectl get pv
 
 创建持久卷时， 管理员需要告诉 Kubemetes 其对应的容量需求， 以及它是否 可以由单个节点或多个节点同时读取或写入。
 
-![截屏2022-09-12 16.20.19](/Users/sumyf/Documents/code/docker/doc/image/截屏2022-09-12 16.20.19.png)
+![截屏2022-09-12 16.20.19](./image/6-2.png)
 
 ##### 创建持久卷声明
 
@@ -176,10 +176,9 @@ kubectl get pv mongodb-pv
 
 PVC 状态 显示己与持久卷的 mongodb pv 绑定。请留意访 问模式 的简 写 : 
 
-- RWO ReadWriteOnce一-仅允许单个节点挂载读写。
-- ROX一-ReadOnlyMan
-- y 允许多个节点挂载只读 。
-- RWX一-ReadWriteMany 允许多个节点挂载读写这个卷 。
+- RWO -- ReadWriteOnce一-仅允许单个节点挂载读写。
+- ROX -- ReadOnlyMany 允许多个节点挂载只读 。
+- RWX -- ReadWriteMany 允许多个节点挂载读写这个卷 。
 
 ##### 在pod中使用持久卷声明
 
